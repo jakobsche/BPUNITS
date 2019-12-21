@@ -121,7 +121,7 @@ var
 begin
   GetTime(Hour, Minute, Second, Sec100);
   if Second <> TimeRec^.Second then begin
-    TimeRec^.Hour := Hour;
+    TimeRec^.Hour := Hour mod 24;
     TimeRec^.Minute := Minute;
     TimeRec^.Second := Second;
     if State and sfVisible <> 0 then Draw
